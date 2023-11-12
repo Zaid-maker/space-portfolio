@@ -1,5 +1,6 @@
 import { Skill_data } from "@/constants";
 import React from "react";
+import SkillDataProvider from "../sub/SkillDataProvider";
 
 const Skills = () => {
   return (
@@ -10,7 +11,13 @@ const Skills = () => {
     >
       <div className="flex flex-row justify-around flex-wrap mt-4 gap-5 items-center">
         {Skill_data.map((image, index) => (
-          <div key={index}>test</div>
+          <SkillDataProvider
+            key={index}
+            src={image.Image}
+            width={image.width}
+            height={image.height}
+            index={index}
+          />
         ))}
       </div>
     </section>
